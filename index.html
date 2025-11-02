@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Attendence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2 class="logo">Attendence List</h2>
+        <ul class="listnav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="form.html">Add Student</a></li>
+            <li><a href="#">LogOut</a></li>
+        </ul>
+    </nav>
+        
+    <table border="1" class="table">
+        <tr>
+            <th rowspan="2">LastName</th>
+            <th rowspan="2">FirstName</th>
+            <th colspan="2">S1</th>
+            <th colspan="2">S2</th>
+            <th colspan="2">S3</th>
+            <th colspan="2">S4</th>
+            <th colspan="2">S5</th>
+            <th colspan="2">S6</th>
+            <th rowspan="2">Absences</th>
+            <th rowspan="2">Participation</th>
+            <th rowspan="2">Message</th>
+        </tr>
+        <tr>
+            <th>P</th>
+            <th>Pa</th>
+            <th>P</th>
+            <th>Pa</th>
+            <th>P</th>
+            <th>Pa</th>
+            <th>P</th>
+            <th>Pa</th>
+            <th>P</th>
+            <th>Pa</th>
+            <th>P</th>
+            <th>Pa</th>
+        </tr>
+        <tr>
+            <td>Nawel</td>
+            <td>LAMANI</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>0 Abs</td>
+            <td>0 par</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Hayat</td>
+            <td>HIZIA</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>0 Abs</td>
+            <td>0 par</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Imen</td>
+            <td>MEZRAR</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>0 Abs</td>
+            <td>0 par</td>
+            <td></td>
+        </tr>
+        
+    </table>
+    <button id="btnrefresh">Refresh</button>
+    <form action="#">
+        <fieldset>
+            <label for="idstudent">Student ID<input type="number" name="idstudent" maxlength="10" ></label>
+            <br>
+            <label for="lastname">LastName<input type="text" name="lastname"></label>
+            <br>
+            <label for="firstname">FirstName<input type="text" name="firstname"></label>
+            <br>
+            <label for="email">Email<input type="email" name="email" placeholder="studentemail@gmail.com"></label>
+            <br>
+            <button>Submit</button>
+        </fieldset> 
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
