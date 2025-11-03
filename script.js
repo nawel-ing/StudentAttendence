@@ -29,7 +29,7 @@ document.getElementById("btnrefresh").onclick = function() {
     
   }
   let message = "";//creating a new variable named message and initializing it as an empty string
-    if (abs < 3 && participation >= 3) {
+    if (abs < 3 && par >= 3) {
       message = "Good attendance – Excellent participation";
     } else if (abs >= 3 && abs <= 4) {
       message = "Warning – attendance low – You need to participate more";
