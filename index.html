@@ -108,15 +108,19 @@
     <button id="btnrefresh">Refresh</button>
     <form action="#">
         <fieldset>
-            <label for="idstudent">Student ID<input type="number" name="idstudent" maxlength="10" ></label>
+            <label for="idstudent">Student ID<input type="number" name="idstudent" maxlength="10" id="idstudent" ></label>
+            <span class="error" id="idError"></span>
             <br>
-            <label for="lastname">LastName<input type="text" name="lastname"></label>
+            <label for="lastname">LastName<input type="text" name="lastname" id="lastname">
+            </label><span class="error" id="lastnameError"></span>
             <br>
-            <label for="firstname">FirstName<input type="text" name="firstname"></label>
+            <label for="firstname">FirstName<input type="text" name="firstname" id="firstname">
+            </label><span class="error" id="firstnameError"></span>
             <br>
-            <label for="email">Email<input type="email" name="email" placeholder="studentemail@gmail.com"></label>
+            <label for="email">Email<input type="email" name="email" placeholder="studentemail@gmail.com" id="email">
+            </label><span class="error" id="emailError"></span>
             <br>
-            <button>Submit</button>
+            <button id="btnsubmitform">Submit</button>
         </fieldset> 
     </form>
     <script src="script.js"></script>

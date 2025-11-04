@@ -41,3 +41,72 @@ document.getElementById("btnrefresh").onclick = function() {
     ligne[i].cells[16].textContent = message;
 }
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  const id = document.getElementById("idstudent");
+  const lastname = document.getElementById("lastname");
+  const firstname = document.getElementById("firstname");
+  const email = document.getElementById("email");
+
+  const idError = document.getElementById("idError");
+  const lastnameError = document.getElementById("lastnameError");
+  const firstnameError = document.getElementById("firstnameError");
+  const emailError = document.getElementById("emailError");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop form submission
+    let valid = true;
+
+    // Reset all error messages
+    idError.textContent = "";
+    lastnameError.textContent = "";
+    firstnameError.textContent = "";
+    emailError.textContent = "";
+
+    // Validate Student ID
+    if (id.value.trim() === "") {
+      idError.textContent = "Student ID is required.";
+      valid = false;
+    } else if (!/^[0-9]+$/.test(id.value)) {
+      idError.textContent = "Student ID must contain only numbers.";
+      valid = false;
+    }
+
+    // Validate Last Name
+    if (lastname.value.trim() === "") {
+      lastnameError.textContent = "Last name is required.";
+      valid = false;
+    } else if (!/^[A-Za-z]+$/.test(lastname.value)) {
+      lastnameError.textContent = "Last name must contain only letters.";
+      valid = false;
+    }
+
+    // Validate First Name
+    if (firstname.value.trim() === "") {
+      firstnameError.textContent = "First name is required.";
+      valid = false;
+    } else if (!/^[A-Za-z]+$/.test(firstname.value)) {
+      firstnameError.textContent = "First name must contain only letters.";
+      valid = false;
+    }
+
+    // Validate Email
+    if (email.value.trim() === "") {
+      emailError.textContent = "Email is required.";
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+      emailError.textContent = "Please enter a valid email address.";
+      valid = false;
+    }
+
+    // If all fields are valid, allow submission
+    if (valid) {
+      alert("Form submitted successfully!");
+      form.submit();
+    }
+  });
+});
+
+
+
