@@ -104,6 +104,29 @@ document.addEventListener("DOMContentLoaded", function () {
     if (valid) {
       alert("Form submitted successfully!");
       form.submit();
+
+    }
+    if (valid) {
+      const newRow = table.insertRow(-1);
+
+      newRow.insertCell(0).textContent = lastname.value;
+      newRow.insertCell(1).textContent = firstname.value;
+
+      for (let i = 0; i < 12; i++) {
+        const cell = newRow.insertCell(i + 2);
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        cell.appendChild(checkbox);
+      }
+
+      newRow.insertCell(14).textContent = "0 Abs";
+      newRow.insertCell(15).textContent = "0 Par";
+      newRow.insertCell(16).textContent = "";
+
+      // ✅ Alert popup after successful add
+      alert("🎉 Student added successfully!");
+
+      form.reset();
     }
   });
 });
