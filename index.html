@@ -106,6 +106,18 @@
         
     </table>
     <button id="btnrefresh">Refresh</button>
+    <button id="showReport">Show Report</button>
+
+    <section id="reportSection" style="margin-top:20px; display:none;">
+    <h2>Attendance Report</h2>
+    <p>Total Students: <span id="totalStudents"></span></p>
+    <p>Present Count: <span id="presentCount"></span></p>
+    <p>Participation Count: <span id="participationCount"></span></p>
+
+    <canvas id="attendanceChart" width="400" height="200"></canvas>
+</section>
+
+
     <form action="#">
         <fieldset>
             <label for="idstudent">Student ID<input type="number" name="idstudent" maxlength="10" id="idstudent" ></label>
@@ -123,6 +135,7 @@
             <button id="btnsubmitform">Submit</button>
         </fieldset> 
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

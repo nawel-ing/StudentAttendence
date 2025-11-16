@@ -130,6 +130,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+document.getElementById("showReport").addEventListener("click", function () {
+    const rows = document.querySelectorAll("table tr");
+    let total = 0;
+    let present = 0;
+    let participated = 0;
 
+    rows.forEach((row, index) => {
+        if (index < 2) return; // skip headers
 
+        total++;
 
+        const checkboxes = row.querySelectorAll("input[type='checkbox']");
+        checkboxes.forEach((cb, i) => {
+            if (cb.checked) {
+                if (i % 2 === 0) present++;
+                else participated++;
+            }
+        });
+    });
+
+    document.getElementById("totalStudents").innerText = total;
+    document.getElementById("presentCount").innerText = present;
+    document.getElementById("participationCount").innerText = participated;
+
+    // SHOW the section BEFORE drawing chart
+    document.getElementById("reportSection").style.display = "block";
+
+    // DRAW CHART
+    const ctx = document.getElementById('attendanceChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Total Students', 'Present', 'Participation'],
+            datasets: [{
+                label: 'Attendance Summary',
+                data: [total, present, participated],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(153, 102, 255, 0.5)'
+                ]
+            }]
+        }
+    });
+});
