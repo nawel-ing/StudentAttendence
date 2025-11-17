@@ -1,3 +1,4 @@
+// exo 1
 document.getElementById("btnrefresh").onclick = function() {
   let ligne = document.querySelectorAll("table tr");
 
@@ -42,6 +43,7 @@ document.getElementById("btnrefresh").onclick = function() {
 }
 };
 
+// exo 2/3
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
   const id = document.getElementById("idstudent");
@@ -53,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const lastnameError = document.getElementById("lastnameError");
   const firstnameError = document.getElementById("firstnameError");
   const emailError = document.getElementById("emailError");
+
+    const table = document.querySelector("table");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault(); // stop form submission
@@ -103,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // If all fields are valid, allow submission
     if (valid) {
       alert("Form submitted successfully!");
-      form.submit();
+     // form.submit(); The student disappeared because form.submit() reloads the page, erasing the dynamically added row.
 
     }
     if (valid) {
@@ -130,6 +134,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// exo 4
 document.getElementById("showReport").addEventListener("click", function () {
     const rows = document.querySelectorAll("table tr");
     let total = 0;
@@ -176,3 +182,30 @@ document.getElementById("showReport").addEventListener("click", function () {
         }
     });
 });
+
+
+
+$(document).ready(function() {
+    // 1. Highlight row on hover
+    $("table tr").hover(
+        function() { // mouse enters
+            $(this).css("background-color", "lightgray");
+        },
+        function() { // mouse leaves
+            $(this).css("background-color", "");
+        }
+    );
+
+    // 2. Show student info on click
+    $("table tr").click(function() {
+        // Skip header rows
+        if ($(this).index() < 2) return;
+
+        let lastname = $(this).find("td:eq(0)").text();
+        let firstname = $(this).find("td:eq(1)").text();
+        let absences = $(this).find("td:eq(14)").text(); // column 15 = Absences
+
+        alert(`Student: ${firstname} ${lastname}\nAbsences: ${absences}`);
+    });
+});
+
